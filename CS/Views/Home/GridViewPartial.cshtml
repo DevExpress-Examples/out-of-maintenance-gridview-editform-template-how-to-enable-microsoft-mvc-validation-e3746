@@ -1,0 +1,37 @@
+﻿@model IList<Example.Models.Product>
+@Html.DevExpress().GridView(s => {
+    s.Name = "grid";
+    s.KeyFieldName = "ID";
+
+    s.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+    s.Columns.Add(c => {
+        c.FieldName = "ID";
+        c.SortIndex = 0;
+        c.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+    });
+    s.Columns.Add("Name");
+
+    s.CommandColumn.Visible = true;
+    s.CommandColumn.NewButton.Visible = true;
+    s.CommandColumn.EditButton.Visible = true;
+    s.CommandColumn.DeleteButton.Visible = true;
+
+    s.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "NewProductPartial" };
+    s.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "DeleteProductPartial" };
+    s.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "EditProductPartial" };
+    s.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+
+    s.SettingsEditing.ShowModelErrorsForEditors = true;
+
+    s.SetEditFormTemplateContent(c => {
+        Html.RenderPartial("ProductFormPartial",
+            !c.Grid.IsNewRowEditing ?
+                Model.FirstOrDefault(m => m.ID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ID"))) :
+                new Example.Models.Product() {
+                    ID = Model.OrderByDescending(p => p.ID)
+                       .First()
+                       .ID + 1
+                });
+    });
+}).Bind(Model).GetHtml()
