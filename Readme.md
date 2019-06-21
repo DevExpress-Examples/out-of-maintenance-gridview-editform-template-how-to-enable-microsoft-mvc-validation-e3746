@@ -9,6 +9,9 @@
 * [ProductFormPartial.cshtml](./CS/Views/Home/ProductFormPartial.cshtml)
 <!-- default file list end -->
 # GridView - EditForm template - How to enable Microsoft MVC validation
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e3746)**
+<!-- run online end -->
 
 
 <p>The example shows how to use Microsoft MVC validation (when the <strong>UnobtrusiveJavaScriptEnabled</strong> property is disabled in <i>web.config</i>). The main requirement is to create an Edit Form template with a form and editors. When a user needs to update a record, the following JavaScript should be invoked to process the Edit Form and check validation parameters:</p>
