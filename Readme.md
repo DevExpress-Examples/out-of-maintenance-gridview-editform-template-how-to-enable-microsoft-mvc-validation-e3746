@@ -9,7 +9,7 @@
 <!-- default file list end -->
 # GridView - EditForm template - How to enable Microsoft MVC validation
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3746)**
+**[[Run Online]](https://codecentral.devexpress.com/e3746/)**
 <!-- run online end -->
 
 
