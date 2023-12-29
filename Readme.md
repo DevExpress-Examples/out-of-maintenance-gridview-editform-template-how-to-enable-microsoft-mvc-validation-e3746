@@ -1,8 +1,3 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128549685/11.2.7%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E3746)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
 <!-- default file list -->
 *Files to look at*:
 
@@ -14,9 +9,6 @@
 * [ProductFormPartial.cshtml](./CS/Views/Home/ProductFormPartial.cshtml)
 <!-- default file list end -->
 # GridView - EditForm template - How to enable Microsoft MVC validation
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3746)**
-<!-- run online end -->
 
 
 <p>The example shows how to use Microsoft MVC validation (when the <strong>UnobtrusiveJavaScriptEnabled</strong> property is disabled in <i>web.config</i>). The main requirement is to create an Edit Form template with a form and editors. When a user needs to update a record, the following JavaScript should be invoked to process the Edit Form and check validation parameters:</p>
